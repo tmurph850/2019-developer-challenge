@@ -17,7 +17,7 @@ If you go onto [adoptapet.com](https://www.adoptapet.com) you'll see the main se
 1. It doesn't have to be a fuzzy match. It can just be an exact match of the user's input up to that point. For example, if a user types "can" it only has to match "Canaan Dog", "Canary Dog", and "Cane Corso". It does _not_ have to also match "Mexican Hairless" (which includes "can" but not at the beginning of the word).
 1. Consider using a [Radix Tree](https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014) or a [Ternary search tree](https://en.wikipedia.org/wiki/Ternary_search_tree). You can use any algorithm you want, but whatever you choose, you will have to explain why you chose that algorithm.
 1. It doesn't have to look like the drop-down on adoptapet.com. If you want to add your own style to it, please do. Bonus points for making it look better than ours!
-1. High-level functionality as well is most important. For example, it can be a bit tricky to get the drop down to highlight your currently-selected value. It's a lot easier to _not_ keep track of the user's selection, but instead to just populate the input field with the text value. If you're running short on time, remember that overall functionality is most important.
+1. High-level functionality is most important. For example, it can be a bit tricky to get the drop down to highlight your currently-selected value. It's a lot easier to _not_ keep track of the user's selection, but instead to just populate the input field with the text value. If you're running short on time, remember that overall functionality is most important.
 1. You can find the list of breeds [here](https://ra-api.adoptapet.com/v1/pet-utilities/1/breeds). If you prefer cats, you can use `.../2/breeds`.
 
 ### Additional rules:
