@@ -10,7 +10,7 @@ Fork this repo, and then do the following:
 
 If you go onto [adoptapet.com](https://www.adoptapet.com) you'll see the main search form includes a field where you can select a breed. Notice if you start typing in the field it will narrow the list for you. Right now that fuzzy match is implemented using [Fuse](http://fusejs.io). Your task is to re-create a similar functionality without using any libraries to assist you.
 
-![dropdown](assets/dropdown.png)
+<img src="assets/dropdown.png" alt="dropdown" width="250">
 
 ### Here are some tips that should help
 
