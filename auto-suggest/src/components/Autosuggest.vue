@@ -1,12 +1,12 @@
 <template>
   <div>
     <form autocomplete="off">
-      <label for="select-breed">Breed</label>
+      <label class="auto-label" for="select-breed">Breed</label>
       <div class="autosuggest">
         <input v-model="selectedBreed.breedName" v-on:click="displayMatches()" v-on:input="filterBreeds($event)"  id="select-breed" type="text" name="select-breed" placeholder="Select A Breed">
       </div>
       <div v-if="showMatches" v-for="(breed) in matches" :key="breed.breedId">
-        <div class="autosuggest-item" v-on:click="showSelectedInfo($event)">{{breed.breedName}}</div>
+        <div class="autosuggest-item" v-on:click="showSelectedInfo($event)"><p>{{breed.breedName}}</p></div>
       </div>
     </form>
   </div>
@@ -54,8 +54,10 @@ export default {
       this.breeds.some(breed => {
         if ( breed.breedName.toLowerCase() === event.target.innerHTML.toLowerCase() ) {
           this.selectedBreed.breedName = breed.breedName;
+          console.log(breed);
         }
       });
+      this.hideMatches();
     },
     removeQuotes: function(s) {
      let newString = s.replace(/["']/g, "").trim();
@@ -80,11 +82,13 @@ export default {
 .autosuggest-item {
   width: 170px;
   margin: 0 auto;
+  border: 1px solid #d4d4d4;
+  z-index: 99;
 }
 .autosuggest-item:hover {
   cursor: pointer;
 }
-label {
+.auto-label {
   font-size: 20px;
   display: block;
   margin: 0 auto;
