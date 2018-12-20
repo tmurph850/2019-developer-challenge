@@ -2,12 +2,11 @@
   <div>
     <form autocomplete="off">
       <div class="autocomplete">
-        <input v-model="selectedBreed" v-on:keyup="filterBreeds()" id="select-breed" type="text" name="select-breed" placeholder="Select A Breed">
+        <input v-model="selectedBreed" v-on:input="filterBreeds($event)" id="select-breed" type="text" name="select-breed" placeholder="Select A Breed">
       </div>
       <div v-for="(breed) in matches" :key="breed.breedId">
         <div>{{breed.breedName}}</div>
       </div>
-      
     </form>
   </div>
 </template>
@@ -31,9 +30,13 @@ export default {
   },
   methods: {
     filterBreeds: function() {
+      this.matches = [];
       this.breeds.forEach(breed => {
-        if ( breed.breedName.includes(this.selectedBreed) ) {
-          this.matches.push(breed.breedName);
+        if ( breed.breedName.includes(event.target.value) ) {
+          let obj = {};
+          obj.breedName = breed.breedName;
+          obj.breedId = breed.breedId;
+          this.matches.push(obj);
         }
       });
       console.log(this.matches);
