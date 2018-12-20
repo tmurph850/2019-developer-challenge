@@ -87,6 +87,7 @@ export default {
 }
 .autosuggest-item:hover {
   cursor: pointer;
+  color: cornflowerblue;
 }
 .auto-label {
   font-size: 20px;
